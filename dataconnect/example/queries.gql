@@ -1,0 +1,35 @@
+mutation CreateMenuItem @auth(level: USER) {
+  menuItem_insert(data: {
+    name: "New Item"
+    category: "Appetizer"
+    price: 9.99
+    createdAt_expr: "request.time"
+  })
+}
+
+query ListMenuItems @auth(level: PUBLIC) {
+  menuItems {
+    id
+    name
+    category
+    price
+  }
+}
+
+mutation UpdateOrderStatus($orderId: UUID!, $status: String!) @auth(level: USER) {
+  order_update(
+    key: { id: $orderId }
+    data: {
+      status: $status
+    }
+  )
+}
+
+query GetUserOrders @auth(level: USER) {
+  orders(where: { createdById_expr: "auth.uid" }) {
+    id
+    orderNumber
+    status
+    totalAmount
+  }
+}

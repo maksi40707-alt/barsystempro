@@ -1,0 +1,74 @@
+mutation SeedDatabase @auth(level: NO_ACCESS) {
+  menuItem_insertMany(data: [
+    {
+      name: "Espresso",
+      category: "Coffee",
+      price: 2.5,
+      preparationTime: 1
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Cappuccino",
+      category: "Coffee",
+      price: 3.5,
+      preparationTime: 2
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Latte",
+      category: "Coffee",
+      price: 4.0,
+      preparationTime: 2
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Iced Coffee",
+      category: "Coffee",
+      price: 3.0,
+      preparationTime: 1
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Black Tea",
+      category: "Tea",
+      price: 2.0,
+      preparationTime: 3
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Green Tea",
+      category: "Tea",
+      price: 2.5,
+      preparationTime: 3
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Herbal Tea",
+      category: "Tea",
+      price: 3.0,
+      preparationTime: 4
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Lemonade",
+      category: "Cold Drinks",
+      price: 2.5,
+      preparationTime: 1
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Iced Tea",
+      category: "Cold Drinks",
+      price: 3.0,
+      preparationTime: 1
+      createdAt_expr: "request.time"
+    },
+    {
+      name: "Orange Juice",
+      category: "Cold Drinks",
+      price: 3.5,
+      preparationTime: 1
+      createdAt_expr: "request.time"
+    }
+  ])
+}
